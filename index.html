@@ -4,9 +4,47 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Vacation Destinations WishList</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <div id="top_background_container">
+        <h3>Vacation Destinations WishList</h3>
+        <p id="sub-heading">
+            Found exciting places to visit on your next vacation? Use the form below to add them to your wishlist
+        </p>
+    </div>
+     
+
+    <form action="">
+        <div class="userInputs">
+            <p>
+                <label for="Destination Name">Destination Name</label> Enter Destination details<br>
+                <input type="text" name="destinationName" id="destinationName" width="300px" height =500px placeholder="Enter the name of the Destination" required >    
+            </p>
+
+            <p>
+                <label for="Location">Location</label><br>
+                <input type="text" name="Location" id="Location" cols=30 placeholder="Where is it located?" required>    
+            </p>
+
+            <p>
+                <label for="Photo">Photo</label><br>
+                <input type="url" name="destinationName" id="Photo" placeholder="Enter an url image of the place" >    
+            </p>
+
+            <p>
+                <label for="Description">Description</label><br>
+                <textarea name="Desciption" id="Description" cols="23" rows="5" placeholder="Where is it located?"></textarea>
+            </p>        
+            
+            <p>
+                <input type="submit" value="Add to List" width="5px">
+            </p>        
+        </div>
+    </form>
+    
     
 </body>
 </html>
