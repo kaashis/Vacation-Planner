@@ -15,7 +15,6 @@ body{
 }
 
 h1{
-    /* margin-bottom: 0.1em; */
     font-weight:300;
 }
 
@@ -33,22 +32,28 @@ h2{
     
 }
 
-#destinationName,#Location,#Photo{
+#form_area{
+    display:flex; 
+    flex-wrap: wrap; 
+}
+
+#user_inputs{
+    width:40%;
+}
+
+
+#destinationName,#Location,#Photo,label{
     height: 30px;
     width: 15em;
-    margin-left: 19%;
+    margin-left: 50%;
     font-size: 16px;
     margin-top: 0.5em;
 }
 
 #Description{
-    margin-left: 19%;
+    margin-left: 50%;
     font-size: 16px;
     margin-top: 0.5em;
-}
-
-.userInputs{
-    text-indent: 19%;
 }
 
 input[type=submit]{
@@ -58,5 +63,16 @@ input[type=submit]{
     width: 16em;
     border: none;
     font-size: 1em;
+    margin-left: 50%;
 }
 
+
+.displayResults{
+    display: flex;
+    flex-wrap: wrap;
+    width:40%;
+    justify-content: center;
+}
+
+
+ 

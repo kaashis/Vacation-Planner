@@ -5,6 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vacation Destinations WishList</title>
+
+    <!-- Link to Bootstrap CSS -->
+    <!-- YOUR CODE GOES HERE -->
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+
+
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -15,37 +21,42 @@
             Found exciting places to visit on your next vacation? Use the form below to add them to your wishlist
         </p>
     </div>
-     
-
-    <form action="">
-        <div class="userInputs">
+    
+    <div id="form_area">
+        <form id="user_inputs">
+        
             <p>
-                <div><label for="Destination Name">Destination Name</label> <h2> Enter destination details</h2></div>
-                
-                <input type="text" name="destinationName" id="destinationName" width="300px" height =500px placeholder="Enter the name of the Destination" required >    
-            </p>
+                <div><label for="destinationName" >Destination Name</label><br>
+                <input type="text" name="destinationName" id="destinationName" placeholder="Enter the name of the Destination" required >
+            </p> 
 
-            <p>
+             <p>
                 <label for="Location">Location</label><br>
                 <input type="text" name="Location" id="Location" cols=30 placeholder="Where is it located?" required>    
-            </p>
+            </p>     
 
             <p>
                 <label for="Photo">Photo</label><br>
-                <input type="url" name="destinationName" id="Photo" placeholder="Enter an url image of the place" >    
+                <input type="url" name="" id="Photo" placeholder="Enter an url image of the place" >
             </p>
-
-            <p>
-                <label for="Description">Description</label><br>
-                <textarea name="Desciption" id="Description" cols="23" rows="5" placeholder="Where is it located?"></textarea>
-            </p>        
             
             <p>
+                <label for="Description">Description</label><br>
+                <textarea name="Description" id="Description" cols="23" rows="5" placeholder="Where is it located?"></textarea>
+            </p>  
+
+            <p>
                 <input type="submit" value="Add to List" width="5px">
-            </p>        
-        </div>
-    </form>
+            </p>      
+        </form>
+    </div>
+
+    <section class="displayResults">
+        <h3 >Enter Destination Details</h3>
+        </section>
+ 
     
+    <script src="script.js"></script>
     
 </body>
 </html>
