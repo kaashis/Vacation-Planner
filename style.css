@@ -2,10 +2,14 @@ body{
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 4 em;
     margin-top: 0;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 #top_background_container{
+    width: 100%;
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column; 
     justify-content: center;
     align-items: center;
@@ -32,10 +36,6 @@ h2{
     
 }
 
-#form_area{
-    display:flex; 
-    flex-wrap: wrap; 
-}
 
 #user_inputs{
     width:40%;
@@ -44,10 +44,12 @@ h2{
 
 #destinationName,#Location,#Photo,label{
     height: 30px;
-    width: 15em;
+    width: 20%;
     margin-left: 50%;
     font-size: 16px;
     margin-top: 0.5em;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 #Description{
@@ -60,19 +62,31 @@ input[type=submit]{
     background-color:#0781e4;
     color: white;
     height: 40px;
-    width: 16em;
+    width: 20%;
     border: none;
     font-size: 1em;
     margin-left: 50%;
-}
-
-
-.displayResults{
     display: flex;
     flex-wrap: wrap;
-    width:40%;
-    justify-content: center;
 }
 
+#form_displayResults{
+    width: 100%;
+    display:flex;
+    flex-wrap: wrap;
+}
+#form_area{
+    width:50%;
+}
+#displayResults{
+    display:inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+   
+}
+
+#displayFormData{
+    text-align: center;
+}
 
  

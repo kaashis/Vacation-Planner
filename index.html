@@ -21,12 +21,11 @@
             Found exciting places to visit on your next vacation? Use the form below to add them to your wishlist
         </p>
     </div>
-    
-    <div id="form_area">
-        <form id="user_inputs">
+    <div id="form_displayResults">
+            <form id="form_area">
         
             <p>
-                <div><label for="destinationName" >Destination Name</label><br>
+                <label for="destinationName" >Destination Name</label><br>
                 <input type="text" name="destinationName" id="destinationName" placeholder="Enter the name of the Destination" required >
             </p> 
 
@@ -34,11 +33,6 @@
                 <label for="Location">Location</label><br>
                 <input type="text" name="Location" id="Location" cols=30 placeholder="Where is it located?" required>    
             </p>     
-
-            <p>
-                <label for="Photo">Photo</label><br>
-                <input type="url" name="" id="Photo" placeholder="Enter an url image of the place" >
-            </p>
             
             <p>
                 <label for="Description">Description</label><br>
@@ -48,14 +42,16 @@
             <p>
                 <input type="submit" value="Add to List" width="5px">
             </p>      
-        </form>
-    </div>
+            </form>
 
-    <section class="displayResults">
-        <h3 >Enter Destination Details</h3>
-        </section>
- 
-    
+        <div class="displayResults">
+            <div id ="header" style="height: 2px; width:100%"><h3>Enter Destination Details</h3></div>
+            
+        </div>
+    </div>
+        
+   
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="script.js"></script>
     
 </body>
