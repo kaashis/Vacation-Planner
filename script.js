@@ -1,42 +1,28 @@
 let firstEntry = true;
+let location1;
+let destinationName, description;
 let photoUrl =
   "https://cavchronicle.org/wp-content/uploads/2018/03/top-travel-destination-for-visas-900x504.jpg";
+
 const displayFormData_container = document.createElement("div");
 
-document
-  .querySelector("#form_area").addEventListener("submit", handleFormSubmit);
+document.querySelector("#form_area").addEventListener("submit", handleFormSubmit);
 
 function handleFormSubmit(evt) {
   evt.preventDefault();
-  const destinationName = evt.target.destinationName.value;
-  const location = evt.target.Location.value;
-  const description = evt.target.Description.value;
+  destinationName = evt.target.destinationName.value;
+  location1 = evt.target.Location.value;
+  description = evt.target.Description.value;
 
   if (firstEntry) {
-    const displayFormData_container_title = document.createElement("div");
-    displayFormData_container_title.style.flexDirection = "column;";
-    document.querySelector(".displayResults").innerText = `My WishList`;
-    
+    document.querySelector(".displayResults").innerHTML='<h3>MyWishList</h3>';
     firstEntry = false;
   }
-  
-  findPhoto(destinationName);
-  //console.log(data);
- //photoUrl = data.data.results[0].urls.small;
-  console.log(photoUrl);
-  displayFormData_container.innerHTML += `<p>${destinationName}</p> 
-        <p>${location}</p> 
-        <p>${description}</p>
-        <p><input type="button" id="editButton" value="Edit" onclick="edit()"><input type="button" id="removeButton" value="Remove"></div>`;
 
-  document
-    .querySelector(".displayResults")
-    .appendChild(displayFormData_container);
-
-  document.querySelector("#form_area").reset();
+  findPhoto(destinationName);  
 }
 
-async function findPhoto(destinationName) {
+ function findPhoto(destinationName) {
   const API =
     `https://api.unsplash.com/search/photos?client_id=3814IBx6Yii34H-j7DnEUh9_b-1VFYvmNgLRzSrg548&query=${destinationName}`;
 
@@ -53,8 +39,17 @@ function display(data) {
   if(data.total!==0){
       photoUrl = data.results[0].urls.small;
   }
- displayFormData_container.innerHTML+=`<p><img src=${photoUrl}></p>`;
- console.log(photoUrl);
+
+  displayFormData_container.innerHTML += `<p><img src=${photoUrl}></p><p>${destinationName}</p> 
+        <p>${location1}</p> 
+        <p>${description}</p>
+        <p><input type="button" id="editButton" value="Edit" onclick="edit()"><input type="button" id="removeButton" value="Remove"></div>`;
+ document.querySelector(".displayResults").appendChild(displayFormData_container);
+
+ document.querySelector("#form_area").reset();
+ 
+ addToList(destinationName);
+ //console.log(photoUrl);
 }
 
 function edit(evt) {
@@ -72,14 +67,16 @@ fetch(API_BASE_URL)
 
 function displayDestinations(dests){
   let initialDisplay= document.querySelector("#header");
-  let defaultDisplay = document.createElement("div")
+  let defaultDisplay = document.createElement("div");
 
   dests.forEach(element => {
-    defaultDisplay.innerHTML += `<p>${element.name}</p> 
-        <p>${element.location}</p> 
-        <p><img src=${element.photo}></p>`;
-  });
+    defaultDisplay.innerHTML += `<p><img src=${element.photo}></p>
+                                 <p>${element.name}</p> 
+                                 <p>${element.location}</p>
+                                 <p></p>`;
   initialDisplay.appendChild(defaultDisplay);
+  });
+  //initialDisplay.appendChild(defaultDisplay);
 }
 
 function addToList(){
